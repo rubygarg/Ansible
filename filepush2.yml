@@ -2,12 +2,12 @@
   gather_facts: 0
   tasks:
     - file:
-        path: /tmp/practise
+        path: /tmp/new_book
         state: directory
         mode: 0777
     - copy:
         src: /etc/fstab
-        dest: /tmp/deman
+        dest: /tmp/new_book
     - yum:
         name: vsftpd 
         state: installed
