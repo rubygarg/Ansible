@@ -1,0 +1,16 @@
+- hosts: cen
+  gather_facts: 0
+  tasks:
+    - file:
+        path: /tmp/deman
+        state: directory
+        mode: 0777
+    - copy:
+        src: /etc/fstab
+        dest: /tmp/deman
+    - yum:
+        name: httpd
+        state: installed
+    - service:
+        name: httpd
+        state: started
